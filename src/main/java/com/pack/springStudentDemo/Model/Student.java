@@ -1,9 +1,13 @@
 package com.pack.springStudentDemo.Model;
 
+import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 
+@Entity
 public class Student {
 
+    @Id
+    private long id;
     private int rollno;
     private String name;
     private int age;
