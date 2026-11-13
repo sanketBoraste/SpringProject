@@ -2,6 +2,8 @@ package com.pack.springStudentDemo.Model;
 
 import jakarta.persistence.*;
 
+import java.util.Date;
+
 @Entity
 @Table(name = "student")
 public class Student {
@@ -12,8 +14,24 @@ public class Student {
     private int rollno;
     private String name;
     private int age;
+    private boolean active;
     private String email;
     private String subject;
+    private String address;
+    private Date CreatedDate;
+    private Date ModifiedDate;
+
+    public Student(Integer id, int rollno, String name, int age, String email, String subject, boolean active) {
+        this.id = id;
+        this.rollno = rollno;
+        this.name = name;
+        this.age = age;
+        this.email = email;
+        this.subject = subject;
+        this.active = active;
+    }
+
+
 
     public boolean isActive() {
         return active;
@@ -31,7 +49,7 @@ public class Student {
         this.id = id;
     }
 
-    private boolean active;
+
 
     public int getAge() {
         return age;

@@ -1,5 +1,7 @@
 package com.pack.springStudentDemo.Controller;
 
+import com.pack.springStudentDemo.DTO.StudentRequestDTO;
+import com.pack.springStudentDemo.DTO.StudentResponseDTO;
 import com.pack.springStudentDemo.Model.Student;
 import com.pack.springStudentDemo.Service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,8 +20,9 @@ public class StudentController {
     }
 
     @PostMapping("/create")
-    public Student addStudent(@RequestBody Student student) {
-        student.setActive(false);
+    public StudentResponseDTO addStudent(
+            @RequestBody StudentRequestDTO student) {
+//        student.setActive(false);
         return studentService.create(student);
     }
 

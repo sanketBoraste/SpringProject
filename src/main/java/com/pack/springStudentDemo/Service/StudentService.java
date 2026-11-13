@@ -1,5 +1,7 @@
 package com.pack.springStudentDemo.Service;
 
+import com.pack.springStudentDemo.DTO.StudentRequestDTO;
+import com.pack.springStudentDemo.DTO.StudentResponseDTO;
 import com.pack.springStudentDemo.Model.Student;
 import com.pack.springStudentDemo.Repository.StudentRepo;
 import org.springframework.stereotype.Service;
@@ -63,11 +65,16 @@ public class StudentService {
 
     }
 
-    public Student create(Student student) {
-        return studentRepo.save(student);
+    public StudentResponseDTO create(StudentRequestDTO studentreq) {
+        Student student = MaptoEntity(studentreq);
+        Student studentresp =  studentRepo.save(student);
+        return MapToDTO(studentresp);
+
     }
 
     public List<Student> createAll(List<Student> students) {
         return studentRepo.saveAll(students);
     }
+
+    private Stud
 }
